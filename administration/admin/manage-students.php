@@ -51,7 +51,7 @@ if(isset($_GET['del']))
         <div class="container">
               <div class="row">
                     <div class="col-md-12">
-                        <h1 class="page-head-line">Course  </h1>
+                        <h1 class="page-head-line">Manage Students </h1>
                     </div>
                 </div>
                 <div class="row" >
@@ -72,7 +72,7 @@ if(isset($_GET['del']))
                                             <th>#</th>
                                             <th>Reg No </th>
                                             <th>Student Name </th>
-                                            <th> Pincode</th>
+                                            <th> Matric Number</th>
                                              <th>Reg Date</th>
                                              <th>Action</th>
                                         </tr>

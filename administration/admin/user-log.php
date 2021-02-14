@@ -18,7 +18,7 @@ else{
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>Enroll History</title>
+    <title>Student Logs</title>
     <link href="assets/css/bootstrap.css" rel="stylesheet" />
     <link href="assets/css/font-awesome.css" rel="stylesheet" />
     <link href="assets/css/style.css" rel="stylesheet" />
@@ -37,7 +37,7 @@ else{
         <div class="container">
               <div class="row">
                     <div class="col-md-12">
-                        <h1 class="page-head-line">Enroll History  </h1>
+                        <h1 class="page-head-line">Student Logs  </h1>
                     </div>
                 </div>
                 <div class="row" >

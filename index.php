@@ -34,8 +34,8 @@
     <li class="nav-item custom-nav-item"><a href="administration/admin/index.php"class="nav-link">Admin</a></li>
     
     
-    <li class="nav-item custom-nav-item"><a href="tsc/admin/login.php"class="nav-link">Teacher Signup</a></li>
-    <li class="nav-item custom-nav-item"><a href="tsc/login.php"class="nav-link">Student Signup</a></li>
+    <li class="nav-item custom-nav-item"><a href="tsc/admin/login.php"class="nav-link">Teacher Login</a></li>
+    <li class="nav-item custom-nav-item"><a href="tsc/login.php"class="nav-link">Student Login</a></li>
     <li class="nav-item custom-nav-item"><a href="#"class="nav-link">Contact</a></li>
       
     </ul>
