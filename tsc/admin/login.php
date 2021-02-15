@@ -134,7 +134,7 @@ if(isset($_POST['btnLogin'])){
     $res = $user::userAuthentication($email, $h_upass);
     if ($res==true) {
        message("You login as ".$_SESSION['TYPE'].".","success");
-      if ($_SESSION['TYPE']=='Administrator'){
+      if ($_SESSION['TYPE']=='Teacher'){
          redirect(web_root."admin/index.php");
       }else{
            redirect(web_root."admin/login.php");
