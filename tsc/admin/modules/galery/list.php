@@ -17,9 +17,9 @@
             ?>          
                             <div class="span4"> 
                                 <div class="stretch">
-                                    <video    controls class="pb-video-frame">
-                                      <source src="<?php echo web_root.'admin/modules/lesson/'.$result->FileLocation; ?>" type="video/mp4">
-                                      <source class="pb-video-frame" src="<?php echo web_root.'admin/modules/lesson/'.$result->FileLocation; ?>" type="video/ogg"> 
+                                    <video controls class="pb-video-frame">
+                                      <source src="<?php echo web_root.'admin/modules/lesson/'.$res->FileLocation; ?>" type="video/mp4">
+                                      <source src="<?php echo web_root.'admin/modules/lesson/'.$res->FileLocation; ?>" type="video/mov"> 
                                     </video> 
                                 </div>
                             </div>
