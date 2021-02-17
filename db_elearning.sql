@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.0.1
+-- version 5.0.3
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 18, 2018 at 03:21 AM
--- Server version: 10.1.32-MariaDB
--- PHP Version: 7.2.5
+-- Generation Time: Feb 17, 2021 at 11:46 AM
+-- Server version: 10.4.14-MariaDB
+-- PHP Version: 7.4.11
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -19,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `dbcaiwl`
+-- Database: `db_elearning`
 --
 
 -- --------------------------------------------------------
@@ -42,7 +41,7 @@ CREATE TABLE `tblautonumbers` (
 
 INSERT INTO `tblautonumbers` (`AUTOID`, `AUTOSTART`, `AUTOEND`, `AUTOINC`, `AUTOKEY`) VALUES
 (1, '02983', 8, 1, 'userid'),
-(10, '000', 3, 1, 'ExerciseID'),
+(10, '000', 7, 1, 'ExerciseID'),
 (12, '000', 34, 1, 'BLOGID'),
 (13, '0', 5, 1, 'STUDENTID');
 
@@ -70,7 +69,9 @@ CREATE TABLE `tblexercise` (
 
 INSERT INTO `tblexercise` (`ExerciseID`, `LessonID`, `Question`, `ChoiceA`, `ChoiceB`, `ChoiceC`, `ChoiceD`, `Answer`, `ExercisesDate`) VALUES
 (20180001, 6, 'What is the title of the video', 'My Father', 'My Mother', 'My Brother', 'My Sister', 'My Sister', '0000-00-00'),
-(20180002, 6, 'Who is the name of the character in the story?', 'Ben', 'Holly', 'Gaston', 'Wise old elf', 'Gaston', '0000-00-00');
+(20180002, 6, 'Who is the name of the character in the story?', 'Ben', 'Holly', 'Gaston', 'Wise old elf', 'Gaston', '0000-00-00'),
+(20210003, 11, 'What is the capital of japan?', 'Tokyo', 'Osaka', 'Kyoto', 'Hiroshima', 'Tokyo', '0000-00-00'),
+(20210004, 12, 'How to read ”?” ?', 'A', 'O', 'U', 'E', 'A', '0000-00-00');
 
 -- --------------------------------------------------------
 
@@ -92,7 +93,10 @@ CREATE TABLE `tbllesson` (
 
 INSERT INTO `tbllesson` (`LessonID`, `LessonChapter`, `LessonTitle`, `FileLocation`, `Category`) VALUES
 (6, 'video', 'video', 'files/Deploy Laravel To Shared Hosting The Easy Way - YouTube.MP4', 'Video'),
-(7, 'test', 'test', 'files/s.pdf', 'Docs');
+(7, 'test', 'test', 'files/s.pdf', 'Docs'),
+(11, '1', 'Introduction of Japan', 'files/01_introduction to japan.pdf', 'Docs'),
+(12, '2', 'Hiragana Table', 'files/02_ Hiragana Table and Practice Sheets.pdf', 'Docs'),
+(13, '3', 'Japanese grammar', 'files/(1) Japanese Grammar Yoroshiku?Greeting Words in Japanese! -.mp4', 'Video');
 
 -- --------------------------------------------------------
 
@@ -105,7 +109,7 @@ CREATE TABLE `tblscore` (
   `LessonID` int(11) NOT NULL,
   `ExerciseID` int(11) NOT NULL,
   `StudentID` int(11) NOT NULL,
-  `NoItems` int(11) NOT NULL DEFAULT '1',
+  `NoItems` int(11) NOT NULL DEFAULT 1,
   `Score` int(11) NOT NULL,
   `Submitted` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -140,7 +144,10 @@ CREATE TABLE `tblstudent` (
 
 INSERT INTO `tblstudent` (`StudentID`, `Fname`, `Lname`, `Address`, `MobileNo`, `STUDUSERNAME`, `STUDPASS`) VALUES
 (1, 'a', 'a', 'a', '21', 'a', '86f7e437faa5a7fce15d1ddcb9eaeaea377667b8'),
-(2, 'sd', 'sad', 'sad', '231', 'a', 'a0f1490a20d0211c997b44bc357e1972deab8ae3');
+(2, 'sd', 'sad', 'sad', '231', 'a', 'a0f1490a20d0211c997b44bc357e1972deab8ae3'),
+(3, 'fadhil', 'sayyid', '..', '01131088747', 'fadhil', '9cf949c125e5af6dc3bb8379638be8b32058c7d9'),
+(4, 'fadhil', 'sayyid', 'skudai', '0123131', 'fadhilsayyid', '9cf949c125e5af6dc3bb8379638be8b32058c7d9'),
+(5, 'fadhil', 'sayyid', 'skudai', '0123131231', 'fadhil', '68008f35c84c247738e02496355ec6c945347bc2');
 
 -- --------------------------------------------------------
 
@@ -167,7 +174,13 @@ CREATE TABLE `tblstudentquestion` (
 
 INSERT INTO `tblstudentquestion` (`SQID`, `ExerciseID`, `LessonID`, `StudentID`, `Question`, `CA`, `CB`, `CC`, `CD`, `QA`) VALUES
 (1, 20180002, 0, 1, 'Who is the name of the character in the story?', 'Ben', 'Holly', 'Gaston', 'Wise old elf', 'Gaston'),
-(2, 20180002, 0, 2, 'Who is the name of the character in the story?', 'Ben', 'Holly', 'Gaston', 'Wise old elf', 'Gaston');
+(2, 20180002, 0, 2, 'Who is the name of the character in the story?', 'Ben', 'Holly', 'Gaston', 'Wise old elf', 'Gaston'),
+(3, 20210003, 0, 1, 'What is the capital of japan?', 'Tokyo', 'Osaka', 'Kyoto', 'Hiroshima', 'Tokyo'),
+(4, 20210003, 0, 2, 'What is the capital of japan?', 'Tokyo', 'Osaka', 'Kyoto', 'Hiroshima', 'Tokyo'),
+(5, 20210003, 0, 3, 'What is the capital of japan?', 'Tokyo', 'Osaka', 'Kyoto', 'Hiroshima', 'Tokyo'),
+(6, 20210004, 0, 1, 'How to read ”?” ?', 'A', 'O', 'U', 'E', 'A'),
+(7, 20210004, 0, 2, 'How to read ”?” ?', 'A', 'O', 'U', 'E', 'A'),
+(8, 20210004, 0, 3, 'How to read ”?” ?', 'A', 'O', 'U', 'E', 'A');
 
 -- --------------------------------------------------------
 
@@ -188,7 +201,7 @@ CREATE TABLE `tblusers` (
 --
 
 INSERT INTO `tblusers` (`USERID`, `NAME`, `UEMAIL`, `PASS`, `TYPE`) VALUES
-(1, 'Janno Palacios', 'janobe', 'd033e22ae348aeb5660fc2140aec35850c4da997', 'Administrator');
+(1, 'Fadhil', 'Fadhil', '9cf949c125e5af6dc3bb8379638be8b32058c7d9', 'Administrator');
 
 --
 -- Indexes for dumped tables
@@ -250,13 +263,13 @@ ALTER TABLE `tblautonumbers`
 -- AUTO_INCREMENT for table `tblexercise`
 --
 ALTER TABLE `tblexercise`
-  MODIFY `ExerciseID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20180003;
+  MODIFY `ExerciseID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20210007;
 
 --
 -- AUTO_INCREMENT for table `tbllesson`
 --
 ALTER TABLE `tbllesson`
-  MODIFY `LessonID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `LessonID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `tblscore`
@@ -268,13 +281,13 @@ ALTER TABLE `tblscore`
 -- AUTO_INCREMENT for table `tblstudent`
 --
 ALTER TABLE `tblstudent`
-  MODIFY `StudentID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `StudentID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `tblstudentquestion`
 --
 ALTER TABLE `tblstudentquestion`
-  MODIFY `SQID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `SQID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `tblusers`
