@@ -1,8 +1,8 @@
 <?php
-defined('server') ? null : define("server", "d6rii63wp64rsfb5.cbetxkdyhwsb.us-east-1.rds.amazonaws.com");
-defined('user') ? null : define ("user", "ybeo02z5ty73obuk") ;
-defined('pass') ? null : define("pass","haub6ac9m9k98eed");
-defined('database_name') ? null : define("database_name", "db_elearning") ;
+defined('server') ? null : define("server", "us-cdbr-east-03.cleardb.com");
+defined('user') ? null : define ("user", "bae772058f461c") ;
+defined('pass') ? null : define("pass","7796a4b3");
+defined('database_name') ? null : define("database_name", "heroku_b3d8476f8671abf") ;
 
 $this_file = str_replace('\\', '/', __File__) ;
 $doc_root = $_SERVER['DOCUMENT_ROOT'];
