@@ -11,7 +11,7 @@ error_reporting(0);
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                 <a class="navbar-brand" href="#" style="color:#85086a; font-size:24px;4px; line-height:24px; ">
+                 <a class="navbar-brand" href="/Ad/index.php" style="color: black; font-size:24px;4px; line-height:24px; ">
 
                    Smart Registration System
                 </a>
